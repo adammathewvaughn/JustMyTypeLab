@@ -7,7 +7,6 @@ $(function () {
     "itant eate anot eat nato inate eat anot tain eat",
     "nee ene ate ite tent tiet ent ine ene ete ene ate"
     ];
-    let mistakes = 0;
     let eachsentence = 0;
     let sentenceletters = 0;
     let trgtlttrarea = $("#target-letter");
@@ -38,28 +37,27 @@ $(function () {
         anykey.css("backgroundColor", "yellow");
         $(document).keyup(() => {
             //   let anykey = $("#" + e.which);
-             anykey.css("backgroundColor", "");
-         });
+            anykey.css("backgroundColor", "");
         });
-         
-         sentencearea.append(sentencetext[eachsentence]);
-         trgtlttrarea.append(sentencetext[eachsentence][sentenceletters]);
-         $(document).keypress((e) => {
-             sentenceletters++;
-             console.log(sentenceletters);
-             //eachsentence++;
-             yellowblock.animate({left: "+=17.5px"}, {duration: 1, easing: "linear"});
-             trgtlttrarea.text(sentencetext[eachsentence][sentenceletters]);
-             sentencearea.text(sentencetext[eachsentence]);
-             if (e.which === key.charCodeAt[sentenceletters]) {
-                 feedbackarea.append('<i class="glyphicon glyphicon-ok"></i>');
-                } else {
-                    feedbackarea.append('<i class="glyphicon glyphicon-remove"></i>');
-                    mistakes++;
-                }
-                
-                // `numberOfWords / minutes - 2 * numberOfMistakes`
-            });
-            
+    });
+    $(sentencearea).text(sentencetext[eachsentence]);
+    $(trgtlttrarea).text(sentencetext[eachsentence][sentenceletters]);
+    $(document).keypress((e) => {
+        sentenceletters++;
+        eachsentence++;
+        yellowblock.animate({ left: "+=17.5px" }, { duration: 1, easing: "linear" });
+        $(trgtlttrarea).text(sentencetext[eachsentence][sentenceletters]);
+        $(sentencearea).text(sentencetext[eachsentence]);
+        if (e.which === e.charCode) (eachsentence[sentenceletters])
+        $(feedbackarea).append('<i class="glyphicon glyphicon-ok"></i>');
+        } else {
+        $(feedbackarea).append('<i class="glyphicon glyphicon-remove"></i>');
+        }
+        
+    });
+    // `numberOfWords / minutes - 2 * numberOfMistakes`
+    //$(document).keyup ((e) => {
+       // alert(`Key "${e.key}" released  [event: keyup]`);
+      //});
     
 });
