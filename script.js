@@ -1,5 +1,5 @@
 
-$(function () {
+$(()=> {
     let sentencetext = [
     "ten ate neite ate nee enet ite ate inet ent eate",
     "Too ato too nOt enot one totA not anot tOO aNot",
@@ -36,8 +36,7 @@ $(function () {
     $(document).keypress((e) => {
         let anykey = $("#" + e.which);
         anykey.css("backgroundColor", "yellow");
-        $(document).keyup(() => {
-            //   let anykey = $("#" + e.which);
+        $(document).keyup(() => {           
              anykey.css("backgroundColor", "");
          });
         });

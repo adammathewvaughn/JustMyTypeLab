@@ -1,5 +1,5 @@
 * {
-  background-color: #ccc;
+  background-color: rgb(124, 238, 253);
   margin: 0;
   padding: 0;	
 }
@@ -15,7 +15,7 @@
   margin-top: 10px;
   width: 15px;
   height: 15px;
-  background-color: yellow;
+  background-color: rgb(219, 216, 12);
 }
 
 .keyboard-container {
